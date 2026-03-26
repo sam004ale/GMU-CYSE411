@@ -17,4 +17,4 @@ async function fetchUserProfile(url) {
     console.log("Error fetching profile");
     return { role: "guest" }; 
   }
-}
+}d
