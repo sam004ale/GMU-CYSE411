@@ -4,10 +4,8 @@
  * @returns {string} - The "safe" username.
  */
 function sanitizeUsername(input) {
-  // VULNERABILITY: This implementation only checks the first character 
-  // and does not enforce length limits or specific character sets.
-  if (input.includes("<")) {
-    return "invalid_user";
-  }
-  return input;
+  if (typeof input !== "string") return "";
+
+  let result = input.replace(/[^A-Za-z0-9_-]/g, "_");
+  return result.substring(0, 20);
 }
